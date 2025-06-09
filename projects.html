@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+
+    header {
+      background-color: #c62828;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 2rem auto;
+      padding: 0.8rem 1.5rem;
+      background-color: white;
+      color: #c62828;
+      border: 2px solid #c62828;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color: #c62828;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .project-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 2rem;
+      animation: flyUp 1s ease both;
+      width: 100%;
+    }
+
+    .section-red {
+      background-color: #c62828;
+      color: white;
+    }
+
+    .section-white {
+      background-color: #fff;
+      color: #222;
+    }
+
+    .project-content {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      width: 100%;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .project-media {
+      flex: 1 1 45%;
+    }
+
+    .project-media img,
+    .project-media video {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-text {
+      flex: 1 1 45%;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 3rem;
+      padding-bottom: 2rem;
+    }
+
+    @keyframes flyUp {
+      from {
+        transform: translateY(60px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Projects
+  </header>
+
+  <section class="project-section section-red">
+    <div class="project-content" style="flex-direction: row; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+    
+      <div class="project-media" style="flex: 0 1 25%;">
+        <img src="RNG_Image.JPG" alt="Random Number Generator Image" style="width: 100%; border-radius: 8px;" />
+      </div>
+
+      <div class="project-media" style="flex: 0 1 25%;">
+        <video controls style="width: 100%; border-radius: 8px;">
+          <source src="RNG_Vid.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="project-text" style="flex: 0 1 40%; min-width: 250px;">
+        <h2>Random Number Generator</h2>
+        <p>
+          I worked with a partner to design and build a Random Number Generator for a school project.
+          We started by designing the schematic in Multisim, then soldered and tested the circuit on a custom PCB board.
+          The result was a fully functioning number generator with LEDs that display a random number each time the circuit is triggered in the form of a die.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="btn-wrapper" style="text-align: center;">
+    <a href="index.html" class="btn">← Back to Home</a>
+  </div>
+
+</body>
+</html>
