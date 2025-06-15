@@ -213,3 +213,34 @@ footer {
   margin-bottom: 0.3rem;
   font-size: 1rem;
 }
+
+.project-wrapper {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  scroll-snap-align: start;
+}
+
+.project-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project-images {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.project-images img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-description {
+  flex: 1 1 300px;
+  max-width: 600px;
+}
