@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <section id="project-combustion-car" style="background: yellow; padding: 4rem;">
-    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-      <div>
-        <img src="Combustion_Car.png" alt="Engine View" style="width: 300px; border: 3px solid red;">
-        <img src="Combustion_Car_gif.gif" alt="Engine Animation" style="width: 300px; border: 3px solid red;">
-      </div>
-      <div style="max-width: 500px;">
-        <h2>Demo Inline-4 Engine</h2>
-        <p>This is a CAD model of a 4-cylinder inline engine animated in Fusion 360.</p>
-      </div>
-    </div>
-  </section>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fusion360</title>
@@ -38,6 +25,7 @@
       padding: 2rem;
       max-width: 1000px;
       margin: 0 auto;
+      text-align: center;
     }
 
     .btn {
@@ -66,16 +54,21 @@
       opacity: 0;
       transform: translateY(60px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      max-width: 1000px;
+      margin: 3rem auto;
+      border-radius: 12px;
     }
 
     .project-wrapper:nth-child(even) {
       background-color: #ffffff;
       color: #222;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .project-wrapper:nt-child(odd) {
+    .project-wrapper:nth-child(odd) {
       background-color: #c62828;
       color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
 
     .project-wrapper.show {
@@ -87,8 +80,8 @@
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
     }
 
     .project-images {
@@ -96,13 +89,16 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      align-items: center;
     }
 
     .project-images img {
       width: 100%;
-      max-width: 250px;
+      max-width: 300px;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      border: 3px solid red;
+      object-fit: contain;
     }
 
     .project-description {
@@ -137,13 +133,13 @@
   <section class="project-wrapper" id="project-turbofan-engine">
     <div class="project-section">
       <div class="project-images">
-        <img src="Jet_Engine1.png" alt="Jet Engine View 1">
-        <img src="Jet_Engine2.png" alt="Jet Engine View 2">
+        <img src="Jet_Engine1.png" alt="Jet Engine View 1" />
+        <img src="Jet_Engine2.png" alt="Jet Engine View 2" />
       </div>
       <div class="project-description">
         <h2>Demo Turbofan Engine</h2>
         <p>
-          This project is a demo CAD model of a turbofan jet engine which was designed using Fusion 360. It showcases key components such as the intake, compressor, and turbine stages with the intention of representing the airflow path and housing design of a turbofan engine. This was my first major attempt at assembling multiple mechanical systems into a unified model, with internal clearance as well as focusing on the strutural layout.
+          This project is a demo CAD model of a turbofan jet engine which was designed using Fusion 360. It showcases key components such as the intake, compressor, and turbine stages with the intention of representing the airflow path and housing design of a turbofan engine. This was my first major attempt at assembling multiple mechanical systems into a unified model, with internal clearance as well as focusing on the structural layout.
         </p>
       </div>
     </div>
@@ -152,8 +148,8 @@
   <section class="project-wrapper" id="project-combustion-car">
     <div class="project-section">
       <div class="project-images">
-        <img src="Combustion_Car.png" alt="Inline-4 Engine Model View">
-        <img src="Combustion_Car_gif.gif" alt="Inline-4 Engine Model">
+        <img src="Combustion_Car.png" alt="Inline-4 Engine Model View" />
+        <img src="Combustion_Car_gif.gif" alt="Inline-4 Engine Model Animation" />
       </div>
       <div class="project-description">
         <h2>Demo Inline-4 Engine</h2>
@@ -172,17 +168,15 @@
   </main>
 
   <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('show');
+          entry.target.classList.add("show");
         }
       });
-    }, {
-      threshold: 0.2
-    });
+    }, { threshold: 0.2 });
 
-    observer.observe(document.getElementById('project-flyup'));
+    document.querySelectorAll(".project-wrapper").forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>
