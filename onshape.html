@@ -166,7 +166,9 @@
       threshold: 0.2
     });
 
-    observer.observe(document.getElementById('onshape-project'));
+    document.querySelectorAll('.project-wrapper').forEach(section => {
+      observer.observe(section);
+    });
   </script>
 </body>
 </html>
